@@ -1,23 +1,89 @@
 <html>
 
 <title>Markdown</title>
-<a href="https://daringfireball.net/projects/markdown/">Markdown Website</a><br /> 
-<a href="https://en.wikipedia.org/wiki/Markdown">Markdown Wiki</a> 
-
-
+<body>
 <p>
 Markdown both the name of "a plain text formatting syntax" or lightweight markup language and its a software tool for converting that text to HTML.
 </p>
 
+
+<h4>Blockquote</h4>
+> character prepended to the text
+<pre><code>	>Placeholder Text line 1
+	Placeholder Text line 2
+	Placeholder Text line 3</code></pre>
+
+Becomes:<br>
 <pre>
-Blockquote
-Code Block
-Code Span 
-Escape Character
-Emphasis
-Horizontal Rule
-Headings 1, 2, and 3
-Links
-List
+	&ltblockquote&gt
+	  &ltp&gtPlaceholder Text line 1
+	Placeholder Text line 2
+	Placeholder Text line 3&lt/p&gt
+	&lt/blockquote&gt
 </pre>
+<hr>
+
+<h4>Code Block</h4>
+Prepend four spaces or a tab to the text 
+<code><pre>	    Place Holder Text line 1
+		Place Holder Text line 2
+	    Place Holder Text line 3</pre></code>
+
+Becomes:<br>
+<pre>
+	&ltpre&gt&ltcode&gtPlace Holder Text line 1
+	Place Holder Text line 2
+	Place Holder Text line 3
+	&lt/code&gt&lt/pre&gt</pre>
+<hr>
+
+<h4>Code Span</h4>
+Enclose text within two ` characters, this is a grave accent aka backquote, or backtick. <br>(Note: Not to be confused with ' the single quote)
+<pre>
+	`Placeholder Text` line 1
+	Placeholder `Text line 2`
+	Placeholder Text `line` 3
+</pre>
+Becomes:<br>
+<pre>
+	&ltp&gt&ltcode&gtPlaceholder Text&lt/code&gt line 1
+	Placeholder &ltcode&gtText line 2&lt/code&gt
+	Placeholder Text &ltcode&gtline&lt/code&gt 3&lt/p&gt</pre>
+<hr>
+
+<h4>Emphasis</h4>
+Enclose text within one or two *<br>
+Enclose text within one or two _
+<pre>
+	*Placeholder Text line 1*
+	**Placeholder Text line 2**
+	_Placeholder Text line 3_
+	__Placeholder Text line 4__</pre>
+Becomes:<br>
+<pre>
+	&ltp&gt&ltem&gtPlaceholder Text line 1&lt/em&gt
+	&ltstrong&gtPlaceholder Text line 2&lt/strong&gt
+	&ltem&gtPlaceholder Text line 3&lt/em&gt
+	&ltstrong&gtPlaceholder Text line 4&lt/strong&gt&lt/p&gt</pre>
+<hr>
+
+<h4>Horizontal Rule</h4>
+<hr>
+<h4>Headings 1, 2, and 3</h4>
+<hr>
+<h4>Links</h4>
+<hr>
+<h4>List</h4>
+<hr>
+<h4>Escape Character</h4>
+
+
+</pre>
+
+<br>
+<a href="https://daringfireball.net/projects/markdown/">Markdown Website</a>
+ |  
+<a href="https://en.wikipedia.org/wiki/Markdown">Markdown Wiki</a> 
+
+</body>
 </html>
