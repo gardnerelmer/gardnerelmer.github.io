@@ -3,10 +3,11 @@
 <title>Markdown</title>
 <body>
 <p>
-Markdown both the name of "a plain text formatting syntax" or lightweight markup language and its a software tool for converting that text to HTML.
+Markdown both the name of "a plain text formatting syntax" or lightweight markup language and its a software tool for converting that text to HTML.<br>
+(Note: \ is the escape character for <code>\`*_{}[]()#+-.!</code>)
 </p>
 
-
+<hr>
 <h4>Blockquote</h4>
 > character prepended to the text
 <pre><code>	>Placeholder Text line 1
@@ -16,9 +17,9 @@ Markdown both the name of "a plain text formatting syntax" or lightweight markup
 Becomes:<br>
 <pre>
 	&ltblockquote&gt
-	  &ltp&gtPlaceholder Text line 1
+	  Placeholder Text line 1
 	Placeholder Text line 2
-	Placeholder Text line 3&lt/p&gt
+	Placeholder Text line 3
 	&lt/blockquote&gt
 </pre>
 <hr>
@@ -46,9 +47,9 @@ Enclose text within two ` characters, this is a grave accent aka backquote, or b
 </pre>
 Becomes:<br>
 <pre>
-	&ltp&gt&ltcode&gtPlaceholder Text&lt/code&gt line 1
+	&ltcode&gtPlaceholder Text&lt/code&gt line 1
 	Placeholder &ltcode&gtText line 2&lt/code&gt
-	Placeholder Text &ltcode&gtline&lt/code&gt 3&lt/p&gt</pre>
+	Placeholder Text &ltcode&gtline&lt/code&gt 3</pre>
 <hr>
 
 <h4>Emphasis</h4>
@@ -59,26 +60,140 @@ Enclose text within one or two _
 	**Placeholder Text line 2**
 	_Placeholder Text line 3_
 	__Placeholder Text line 4__</pre>
-Becomes:<br>
+Becomes:
 <pre>
-	&ltp&gt&ltem&gtPlaceholder Text line 1&lt/em&gt
+	&ltem&gtPlaceholder Text line 1&lt/em&gt
 	&ltstrong&gtPlaceholder Text line 2&lt/strong&gt
 	&ltem&gtPlaceholder Text line 3&lt/em&gt
-	&ltstrong&gtPlaceholder Text line 4&lt/strong&gt&lt/p&gt</pre>
+	&ltstrong&gtPlaceholder Text line 4&lt/strong&gt</pre>
+<hr>
+<h4>Headings</h4>
+# character prepended to line 
+= or - characters directly below lines for h1 and h2 
+<pre>
+	Placeholder Text line 1a
+	=
+	#Placeholder Text line 1b
+	Placeholder Text line 2a
+	-
+	##Placeholder Text line 2b
+	###Placeholder Text line 3
+	####Placeholder Text line 4
+	#####Placeholder Text line 5
+	######Placeholder Text line 6</pre>
+Becomes:</br>
+	<pre>	&lth1&gtPlaceholder Text line 1a&lt/h1&gt
+
+	&lth1&gtPlaceholder Text line 1b&lt/h1&gt
+
+	&lth2&gtPlaceholder Text line 2a&lt/h2&gt
+
+	&lth2&gtPlaceholder Text line 2b&lt/h2&gt
+
+	&lth3&gtPlaceholder Text line 3&lt/h3&gt
+
+	&lth4&gtPlaceholder Text line 4&lt/h4&gt
+
+	&lth5&gtPlaceholder Text line 5&lt/h5&gt
+
+	&lth6&gtPlaceholder Text line 6&lt/h6&gt
+</pre>
+
 <hr>
 
 <h4>Horizontal Rule</h4>
-<hr>
-<h4>Headings 1, 2, and 3</h4>
+Three or more of the - hyphens, * asterisks, _ underscore character
+<pre>
+	Placeholder Text line 1
+
+	_ __
+
+	*****
+
+	- - -
+
+	Placeholder Text line 2</pre>
+Becomes:<br>
+<pre>
+	Placeholder Text line 1
+
+	&lthr /&gt
+
+	&lthr /&gt
+
+	&lthr /&gt
+
+	Placeholder Text line 2</pre>
+
+
+
 <hr>
 <h4>Links</h4>
-<hr>
-<h4>List</h4>
-<hr>
-<h4>Escape Character</h4>
+URL or E-mail address inside < > (Note: E-mail addresses will be obfuscated with Hex and Decimal encoding)<br>
+Link text in [ ], followed by : and URL, optional Title between " "<br>
+Link text in [ ], followed by reference inside of [ ]<br>
+Prepend [ ] with ! to change from hyperlink to image<br>
+<br>
+References<br>
+Reference name between [ ] followed : and URL, optional Title between " "<br>
+Implicit reference has no name, URL between [ ], followed by empty []<br>
 
+<pre>
+	[Ex1]: http://www.example.com "Reference"
+	[Ex2]: image.png "Image, Implicit Reference"
 
+	&lthttp://www.example.com&gt
+	&ltaddress@example.com&gt  
+	[Inline Link](http://www.example.com "Inline")  
+	[Reference Link][Ex1]  
+	![Ex2][]
 </pre>
+Becomes:</br>
+<pre>	&lta href="http://www.example.com"&gthttp://www.example.com&lt/a&gt
+	&lta href="&#x6D;&#x61;&#x69;&#x6C;&#116;&#111;:&#97;&#100;&#x64;re&#115;&#x73;&#64;&#x65;&#120;a&#x6D;&#112;&#108;&#x65;&#46;&#x63;o&#109;"&gt&#97;&#100;&#x64;re&#115;&#x73;&#64;&#x65;&#120;a&#x6D;&#112;&#108;&#x65;&#46;&#x63;o&#109;&lt/a&gt &ltbr /&gt
+	&lta href="http://www.example.com" title="Inline"&gtInline Link&lt/a&gt &ltbr /&gt
+	&lta href="http://www.example.com" title="Reference"&gtReference Link&lt/a&gt &ltbr /&gt
+	&ltimg src="image.png" alt="Ex2" title="Image, Implicit Reference" /&gt
+</pre>
+
+<hr>
+
+
+<h4>List</h4>
+Prepend line with + or - or * for unordered list<br>
+Prepend line with number-period-space sequence for ordered list<br>
+(Note: any single digit number, not just 0 or 1)
+
+<pre>	1. Placeholder Text line 1
+	+ Placeholder Text line 2
+	- Placeholder Text line 3
+	* Placeholder Text line 4
+</pre>
+Becomes:</br>
+<pre>	&ltol&gt
+	&ltli&gtPlaceholder Text line 1&lt/li&gt
+	&ltli&gtPlaceholder Text line 2&lt/li&gt
+	&ltli&gtPlaceholder Text line 3&lt/li&gt
+	&ltli&gtPlaceholder Text line 4&lt/li&gt
+	&lt/ol&gt
+</pre>
+<hr>
+<h4>Paragraphs and Line Breaks</h4>
+Paragraphs are one or more consecutive lines of text<br>
+Append two or more spaces to the end of a line for a line break<br>
+<pre>
+	Placeholder Text line 1
+	Placeholder Text line 2  
+	Placeholder Text line 3
+
+	Placeholder Text line 4
+</pre>
+Becomes:<br>
+<pre>	&ltp&gtPlaceholder Text line 1
+	Placeholder Text line 2 &ltbr /&gt
+	Placeholder Text line 3&lt/p&gt
+
+	&ltp&gtPlaceholder Text line 4&lt/p&gt</pre><hr>
 
 <br>
 <a href="https://daringfireball.net/projects/markdown/">Markdown Website</a>
